@@ -1,0 +1,65 @@
+[package]
+name = "oxigraph"
+version = "0.2.5"
+authors = ["Tpt <thomas@pellissier-tanon.fr>"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+keywords = ["RDF", "SPARQL", "graph-database", "database"]
+categories = ["database-implementations"]
+repository = "https://github.com/oxigraph/oxigraph/tree/master/lib"
+homepage = "https://oxigraph.org/"
+description = """
+a SPARQL database and RDF toolkit
+"""
+edition = "2018"
+
+[package.metadata.docs.rs]
+all-features = true
+
+[features]
+default = []
+sophia = ["sophia_api"]
+http_client = ["httparse", "native-tls"]
+
+[dependencies]
+rocksdb = { version = "0.16", optional = true }
+sled = { version = "0.34", optional = true }
+quick-xml = "0.22"
+rand = "0.8"
+md-5 = "0.9"
+sha-1 = "0.9"
+sha2 = "0.9"
+digest = "0.9"
+regex = "1"
+oxilangtag = "0.1"
+oxiri = "0.1"
+rio_api = "0.5"
+rio_turtle = "0.5"
+rio_xml = "0.5"
+hex = "0.4"
+nom = "6"
+peg = "0.7"
+siphasher = "0.3"
+lasso = {version="0.5", features=["multi-threaded", "inline-more"]}
+sophia_api = { version = "0.6.2", optional = true }
+http = "0.2"
+httparse = { version = "1", optional = true }
+native-tls = { version = "0.2", optional = true }
+json-event-parser = "0.1"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+js-sys = "0.3"
+getrandom = {version="0.2", features=["js"]}
+
+[dev-dependencies]
+rayon = "1"
+criterion = "0.3"
+sophia_api = { version = "0.6.2", features = ["test_macro"] }
+
+[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
+wasm-bindgen-test = "0.3"
+
+[[bench]]
+name = "store"
+harness = false
+required-features = ["sled", "rocksdb"]
