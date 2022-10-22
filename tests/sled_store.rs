@@ -1,8 +1,8 @@
-use oxigraph::io::{DatasetFormat, GraphFormat};
-use oxigraph::model::vocab::{rdf, xsd};
-use oxigraph::model::*;
-use oxigraph::store::sled::SledConflictableTransactionError;
-use oxigraph::SledStore;
+use oxigraph_0_2_sled::io::{DatasetFormat, GraphFormat};
+use oxigraph_0_2_sled::model::vocab::{rdf, xsd};
+use oxigraph_0_2_sled::model::*;
+use oxigraph_0_2_sled::store::sled::SledConflictableTransactionError;
+use oxigraph_0_2_sled::SledStore;
 use std::io;
 use std::io::Cursor;
 use std::process::Command;

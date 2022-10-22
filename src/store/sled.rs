@@ -36,7 +36,7 @@ use std::{fmt, io, str};
 ///
 /// Usage example:
 /// ```
-/// use oxigraph::SledStore;
+/// use oxigraph_0_2_sled::SledStore;
 /// use oxigraph::sparql::QueryResults;
 /// use oxigraph::model::*;
 /// # use std::fs::remove_dir_all;

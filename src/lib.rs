@@ -127,7 +127,7 @@ pub mod sparql;
 pub mod store;
 
 pub use crate::store::memory::MemoryStore;
-#[cfg(feature = "rocksdb")]
-pub use crate::store::rocksdb::RocksDbStore;
-#[cfg(feature = "sled")]
+// #[cfg(feature = "rocksdb")]
+// pub use crate::store::rocksdb::RocksDbStore;
+// #[cfg(feature = "sled")]
 pub use crate::store::sled::SledStore;

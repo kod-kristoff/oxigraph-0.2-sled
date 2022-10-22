@@ -1,21 +1,21 @@
 //! RDF [RDF dataset](https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-dataset) storage implementations.
 
-#[cfg(any(feature = "rocksdb", feature = "sled"))]
+// #[cfg(any(feature = "rocksdb", feature = "sled"))]
 mod binary_encoder;
 pub mod memory;
 pub(crate) mod numeric_encoder;
-#[cfg(feature = "rocksdb")]
-pub mod rocksdb;
-#[cfg(feature = "sled")]
+// #[cfg(feature = "rocksdb")]
+// pub mod rocksdb;
+// #[cfg(feature = "sled")]
 pub mod sled;
 pub(crate) mod small_string;
 #[cfg(feature = "sophia")]
 mod sophia;
 
 pub use crate::store::memory::MemoryStore;
-#[cfg(feature = "rocksdb")]
-pub use crate::store::rocksdb::RocksDbStore;
-#[cfg(feature = "sled")]
+// #[cfg(feature = "rocksdb")]
+// pub use crate::store::rocksdb::RocksDbStore;
+// #[cfg(feature = "sled")]
 pub use crate::store::sled::SledStore;
 
 use crate::error::invalid_input_error;
